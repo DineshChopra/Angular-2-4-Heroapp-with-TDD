@@ -5,18 +5,26 @@ import { HttpModule } from '@angular/http';
 
 import { AppComponent } from './app.component';
 import { HeroDetailComponent } from './hero-detail.component';
-
+import { HeroComponent } from './hero.component';
+import { HeroService } from './hero.service';
+import { HeroesComponent } from './heroes.component';
+import { AppRoutingModule }     from './app-routing.module';
+import { DashboardComponent } from './dashboard.component';
 @NgModule({
   declarations: [
     AppComponent,
-    HeroDetailComponent
+    HeroDetailComponent,
+    HeroComponent,
+    HeroesComponent,
+    DashboardComponent
   ],
   imports: [
     BrowserModule,
     FormsModule,
-    HttpModule
+    HttpModule,
+    AppRoutingModule
   ],
-  providers: [],
+  providers: [ HeroService ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
